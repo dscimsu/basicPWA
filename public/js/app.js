@@ -1,6 +1,16 @@
 const input = document.getElementById('lbsInput');
 const output = document.getElementById('output');
 
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js')
+  .then(function(){
+    console.log('Sw registered');
+  })
+}
+
+
+
+
 output.style.visibility = 'hidden';
 input.addEventListener('input', (e) => {
   let lbs = e.target.value;
